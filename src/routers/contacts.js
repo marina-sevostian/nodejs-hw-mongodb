@@ -8,13 +8,18 @@ import {
 } from '../controllers/contacts.js';
 import { ctrlWrapper } from '../utils/ctrlWrapper.js';
 import { validateBody } from '../middlewares/validateBody.js';
-import { createContactSchema } from '../validation/contacts.js';
+import {
+  createContactSchema,
+  updateContactSchema,
+} from '../validation/contacts.js';
+import { isValidId } from '../middlewares/isValidId.js';
 
 const contactsRouter = Router();
 
 contactsRouter.get('/contacts', ctrlWrapper(getContactsController));
 contactsRouter.get(
   '/contacts/:contactId',
+  isValidId,
   ctrlWrapper(getContactByIdController),
 );
 contactsRouter.post(
@@ -24,11 +29,13 @@ contactsRouter.post(
 );
 contactsRouter.patch(
   '/contacts/:contactId',
-  validateBody(createContactSchema),
+  isValidId,
+  validateBody(updateContactSchema),
   ctrlWrapper(patchContactController),
 );
 contactsRouter.delete(
   '/contacts/:contactId',
+  isValidId,
   ctrlWrapper(deleteContactController),
 );
 
