@@ -3,8 +3,8 @@ import Joi from 'joi';
 export const createContactSchema = Joi.object({
   name: Joi.string().min(3).max(20).required(),
   phoneNumber: Joi.string().min(3).max(20).required(),
-  email: Joi.string().email().required(),
-  isFavourite: Joi.boolean().required().messages({
+  email: Joi.string().email(),
+  isFavourite: Joi.boolean().messages({
     'boolean.base': 'Is favourite should be a boolean',
     'any.required': 'Is favourite is required',
   }),
