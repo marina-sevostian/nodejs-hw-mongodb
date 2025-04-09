@@ -72,8 +72,9 @@ export const updateContact = async (
   // const contact = await ContactsCollection.findOne(contactIdAndUserId);
   // console.log(contact);
   console.log('contactIdAndUserId', contactIdAndUserId);
-
-  if (!rawResult || !rawResult.value) return null;
+  // console.log('rawResult.value:', rawResult.value);
+  if (!rawResult) return null;
+  // if (!rawResult || !rawResult.value) return null;
 
   return {
     contact: rawResult.value,
