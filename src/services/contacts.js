@@ -76,9 +76,7 @@ export const updateContact = async (
   if (!rawResult) return null;
   // if (!rawResult || !rawResult.value) return null;
 
-  return {
-    rawResult,
-  };
+  return rawResult;
 };
 
 export const deleteContact = async (contactId, userId) => {
