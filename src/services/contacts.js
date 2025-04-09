@@ -59,14 +59,19 @@ export const updateContact = async (
   payload,
   options = {},
 ) => {
+  console.log('payload', payload);
   const rawResult = await ContactsCollection.findOneAndUpdate(
-    { ...contactIdAndUserId },
+    contactIdAndUserId,
     payload,
     {
       new: true,
       ...options,
     },
   );
+  console.log('rawResult:', rawResult);
+  // const contact = await ContactsCollection.findOne(contactIdAndUserId);
+  // console.log(contact);
+  console.log('contactIdAndUserId', contactIdAndUserId);
 
   if (!rawResult || !rawResult.value) return null;
 
