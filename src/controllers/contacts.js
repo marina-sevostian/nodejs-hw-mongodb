@@ -62,12 +62,20 @@ export const createContactController = async (req, res) => {
 
 export const patchContactController = async (req, res, next) => {
   const userId = req.user._id;
+  console.log('User ID from token:', req.user._id);
   if (!userId) {
     throw createHttpError(400, 'User is not authenticated');
   }
   const { contactId } = req.params;
   const contactIdAndUserId = { userId, _id: contactId };
+
+  // console.log('contactIdAndUserId', contactIdAndUserId);
+  // console.log('req.body', req.body);
+  // console.log('req.params', req.params);
+
   const result = await updateContact(contactIdAndUserId, req.body);
+  console.log('result', result);
+
   if (!result) {
     throw createHttpError(404, 'Contact not found');
   }
