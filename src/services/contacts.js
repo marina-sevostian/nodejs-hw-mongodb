@@ -72,12 +72,12 @@ export const updateContact = async (
   // const contact = await ContactsCollection.findOne(contactIdAndUserId);
   // console.log(contact);
   console.log('contactIdAndUserId', contactIdAndUserId);
-  // console.log('rawResult.value:', rawResult.value);
+
   if (!rawResult) return null;
   // if (!rawResult || !rawResult.value) return null;
 
   return {
-    contact: rawResult.value,
+    contact: rawResult,
     isNew: Boolean(rawResult?.lastErrorObject?.upserted),
   };
 };
