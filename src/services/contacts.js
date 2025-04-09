@@ -77,7 +77,7 @@ export const updateContact = async (
   // if (!rawResult || !rawResult.value) return null;
 
   return {
-    rawResult,
+    contact: rawResult,
     isNew: Boolean(rawResult?.lastErrorObject?.upserted),
   };
 };
