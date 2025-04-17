@@ -9,7 +9,7 @@ import cookieParser from 'cookie-parser';
 import { UPLOAD_DIR } from './constans/index.js';
 
 const PORT = Number(getEnvVar('PORT', '3000'));
-
+console.log(PORT);
 export const setupServer = () => {
   const app = express();
   app.use(express.json());
