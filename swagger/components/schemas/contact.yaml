@@ -13,11 +13,11 @@ properties:
   name:
     description: "Contact's name"
     type: string
-    example: 'Artur Luniaka'
+    example: 'John Doe'
   phoneNumber:
     description: 'Contact phone number'
     type: string
-    example: '+380(95)042-28-21'
+    example: '+380(95)042-28-22'
   email:
     description: "Contact's email"
     type: string
