@@ -37,8 +37,8 @@ requestBody:
             format: binary
 
 responses:
-  '200':
-    description: Creates a student
+  '201':
+    description: Creates a contact
     content:
       application/json:
         schema:

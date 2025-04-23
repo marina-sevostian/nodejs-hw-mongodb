@@ -70,3 +70,5 @@ responses:
                 message:
                   type: string
                   example: 'Unauthorized'
+  '400':
+    $ref: '../../../components/responses/400.yaml'
