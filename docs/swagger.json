@@ -173,9 +173,6 @@
           },
           "401": {
             "$ref": "#/components/responses/401"
-          },
-          "404": {
-            "$ref": "#/components/responses/404"
           }
         }
       },
@@ -238,8 +235,8 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "Creates a student",
+          "201": {
+            "description": "Creates a contact",
             "content": {
               "application/json": {
                 "schema": {
@@ -329,6 +326,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
           },
           "401": {
             "$ref": "#/components/responses/401"
@@ -469,6 +469,9 @@
         "responses": {
           "204": {
             "description": "Contact deleted!"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
           },
           "401": {
             "$ref": "#/components/responses/401"
@@ -682,6 +685,9 @@
               }
             }
           },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
           "409": {
             "$ref": "#/components/responses/409"
           }
@@ -757,6 +763,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
           },
           "401": {
             "description": "Unauthorized error",
